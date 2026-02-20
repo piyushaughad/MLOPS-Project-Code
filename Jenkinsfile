@@ -3,7 +3,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_REO = "piyushaughad/jenkins-shared-mlops-project"
+        DOCKER_REPO = "piyushaughad/jenkins-shared-mlops-project"
 
     }
     stages {
@@ -16,7 +16,7 @@ pipeline {
 
         stage('Build & Push Image') {
             steps {
-                dockerBuildAndPush("DOCKER_REO","dockerhub-token")
+                dockerBuildAndPush(DOCKER_REPO,"dockerhub-token")
                 
             }
         }
